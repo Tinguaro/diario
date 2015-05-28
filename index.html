@@ -6,6 +6,7 @@
 	<title>TFG</title>
 	
 	<script src="jquery/jquery-1.11.2.min.js"></script>
+	<script src="jquery/index.js"></script>
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">	
@@ -17,35 +18,65 @@
 
 	<!-- entrada nueva -->
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		
-		<!--div class="panel panel-primary">
-			<div class="panel-heading">
-				<h4>FECHA<h4>
-			</div>
-			<div class="panel-body">
-				Cuerpo ...
-			</div>
-		</div-->
-		
-		<div class="panel panel-primary">
-		  <div class="panel-heading">
-		  	<h4>26/05/15</h4>
-		  </div>
-		  <div class="panel-body">
-		    <ul>
-		    	<li>Creación de tinguaro.github.io/diario para poder acceder al diario fuera de casa.</li>
-		    	<li>Creación de repositorio para almacenar el código del TFG.</li>
-		    	<li>Búsqueda de información sobre dspace y LOM.</li>
-		    	<li>Descargado e instalado dspace virtual en mi máquina.
-		    		<ul>
-		    			<li>instale liblivecd en sourceforce, viene con dspace instalado y más cosas que no nos interesa. Voy a reinstalar en VBX la iso para intentar conseguir más velocidad en el ordenador</li>
-		    			<li>Máquina virtual instalada y arrancada. Configuración de la máquina para estar conectado a un adaptador puente. Despues en el navegador del ordenador poner la ip del eth0</li>
-		    			<li>Creo una comunidad en la interfaz de usuario de dspace ip/jspui.</li>
-		    		</ul>
-		    	</li>
-		    </ul>
-		  </div>
+		<div class="navegador" id="navegador">
+			<button onclick="entradas();">Entradas</button>
+			<button onclick="insertar();">Insertar</button>
 		</div>
+
+		<div class="entradas" id="entradas">
+			<!--div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>FECHA<h4>
+				</div>
+				<div class="panel-body">
+					Cuerpo ...
+				</div>
+			</div-->
+			
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>28/05/15<h4>
+				</div>
+				<div class="panel-body">
+					Hoy no tengo ganas de continuar con dspace ya que el otro día me frustre con la IU pero como tengo ganas de programar un ratito voy a mejorar el aspecto del diario. Quiero añadirle dos tabs, una donde se vea la lista de las entradas y otra que sea un pequeño formulario para insertar las entradas.</br></br>
+					Ya esta separado el diario, ahora toca hacer el formulario para insertar una nueva entrada.</br></br>
+					Formulario listo y servicio en node.js listo y ejecutandose en heroku. El servicio será el encargado de almacenar los comentarios en un fichero de txt.
+				</div>
+			</div>
+
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			  	<h4>26/05/15</h4>
+			  </div>
+			  <div class="panel-body">
+			    <ul>
+			    	<li>Creación de tinguaro.github.io/diario para poder acceder al diario fuera de casa.</li>
+			    	<li>Creación de repositorio para almacenar el código del TFG.</li>
+			    	<li>Búsqueda de información sobre dspace y LOM.</li>
+			    	<li>Descargado e instalado dspace virtual en mi máquina.
+			    		<ul>
+			    			<li>instale liblivecd en sourceforce, viene con dspace instalado y más cosas que no nos interesa. Voy a reinstalar en VBX la iso para intentar conseguir más velocidad en el ordenador</li>
+			    			<li>Máquina virtual instalada y arrancada. Configuración de la máquina para estar conectado a un adaptador puente. Despues en el navegador del ordenador poner la ip del eth0</li>
+			    			<li>Creo una comunidad en la interfaz de usuario de dspace ip/jspui.</li>
+			    		</ul>
+			    	</li>
+			    </ul>
+			  </div>
+			</div>
+		</div>
+
+		<div class="insertar" id="insertar">
+			<form method="post" action="https://diariotfg.herokuapp.com/nuevaentrada">
+				<label>Fecha</label>
+				<input type="date" name="fecha"></input>
+				<label>Contraseña</label>
+				<input type="password" name="pass"></input>
+				<label>Contenido</label>
+				<textarea rows="10" name="contenido"></textarea>
+				<button type="submit" onclick="referenciar();">Enviar</button>
+			</form>
+		</div>
+
 	</div>
 	<!-- fin de la entrada -->
 </body>
