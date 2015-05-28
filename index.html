@@ -32,7 +32,8 @@
 					Cuerpo ...
 				</div>
 			</div-->
-			
+		</div>
+		<div class="entradasViejas" id="entradasViejas">	
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h4>28/05/15<h4>
@@ -66,14 +67,14 @@
 		</div>
 
 		<div class="insertar" id="insertar">
-			<form method="post" action="https://diariotfg.herokuapp.com/nuevaentrada">
+			<form id="formulario" method="post" action="https://diariotfg.herokuapp.com/nuevaentrada">
 				<label>Fecha</label>
 				<input type="date" name="fecha"></input>
 				<label>Contraseña</label>
 				<input type="password" name="pass"></input>
 				<label>Contenido</label>
 				<textarea rows="10" name="contenido"></textarea>
-				<button type="submit" onclick="referenciar();">Enviar</button>
+				<button onclick="submit();">Enviar</button>
 			</form>
 		</div>
 
