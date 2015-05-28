@@ -29,7 +29,6 @@ function leer() {
 }
 
 function exito(data) {
-	console.log(data);
 	var valores = data.split(';');
 	var i = 0;
 	var text = "";
