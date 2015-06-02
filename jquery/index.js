@@ -29,14 +29,11 @@ function leer() {
 }
 
 function exito(data) {
-	var valores = data.split(';');
 	var i = 0;
 	var text = "";
-	while(i < valores.length) {
-		if(valores[i].length != 0) {
-			text = "<div class='panel panel-primary'><div class='panel-heading'><h4>"+ valores[i] +"<h4></div><div class='panel-body'>"+ valores[i + 1] +"</div></div>" + text;
-		}
-		i += 2;
+	while(i < data.length) {
+		text = "<div class='panel panel-primary'><div class='panel-heading'><h4>"+ data[i]['fecha'] +"<h4></div><div class='panel-body'>"+ data[i]['texto'] +"</div></div>" + text;
+		i++;
 	}
 	$("#entradas").append(text);
 }
