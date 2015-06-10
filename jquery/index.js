@@ -33,7 +33,7 @@ function exito(data) {
 	var text = "";
 	var contenido = "";
 	while(i < data.length) {
-		contenido = data[i]['texto'].replace(/\n/, '<br>');
+		contenido = data[i]['texto'].replace(/\n/g, '<br>');
 		//console.log(contenido);
 		text = "<div class='panel panel-primary'><div class='panel-heading'><h4>"+ data[i]['fecha'] +"<h4></div><div class='panel-body'>"+ contenido +"</div></div>" + text;
 		i++;
