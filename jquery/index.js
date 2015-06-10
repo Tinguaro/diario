@@ -31,8 +31,11 @@ function leer() {
 function exito(data) {
 	var i = 0;
 	var text = "";
+	var contenido = "";
 	while(i < data.length) {
-		text = "<div class='panel panel-primary'><div class='panel-heading'><h4>"+ data[i]['fecha'] +"<h4></div><div class='panel-body'>"+ data[i]['texto'] +"</div></div>" + text;
+		contenido = data[i]['texto'].replace(/\n/, '<br>');
+		//console.log(contenido);
+		text = "<div class='panel panel-primary'><div class='panel-heading'><h4>"+ data[i]['fecha'] +"<h4></div><div class='panel-body'>"+ contenido +"</div></div>" + text;
 		i++;
 	}
 	$("#entradas").append(text);
